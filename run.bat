@@ -1,6 +1,6 @@
 @echo off
 echo ============================================
-echo   Pharmacy Management System - Launcher
+echo   Medical Store System - Launcher
 echo ============================================
 echo.
 
