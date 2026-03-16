@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fitToWidth="true" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pharmacy.controllers.ReportsController">
+   <content>
+      <VBox spacing="15.0">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="15.0" />
+         </padding>
+         <children>
+            <Label text="Reports and Analytics" textFill="#2c3e50">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+
+            <HBox spacing="15.0">
+               <children>
+                  <VBox spacing="5.0" style="-fx-background-color: #27ae60; -fx-background-radius: 8;" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                     <children>
+                        <Label text="Today Revenue" textFill="white" />
+                        <Label fx:id="lblDailyRevenue" text="0.00" textFill="white">
+                           <font><Font name="System Bold" size="24.0" /></font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox spacing="5.0" style="-fx-background-color: #2980b9; -fx-background-radius: 8;" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                     <children>
+                        <Label text="Today Sales" textFill="white" />
+                        <Label fx:id="lblDailySales" text="0" textFill="white">
+                           <font><Font name="System Bold" size="24.0" /></font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox spacing="5.0" style="-fx-background-color: #f39c12; -fx-background-radius: 8;" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                     <children>
+                        <Label text="Low Stock" textFill="white" />
+                        <Label fx:id="lblLowStock" text="0" textFill="white">
+                           <font><Font name="System Bold" size="24.0" /></font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox spacing="5.0" style="-fx-background-color: #e67e22; -fx-background-radius: 8;" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                     <children>
+                        <Label text="Expiring (30d)" textFill="white" />
+                        <Label fx:id="lblExpiring" text="0" textFill="white">
+                           <font><Font name="System Bold" size="24.0" /></font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox spacing="5.0" style="-fx-background-color: #e74c3c; -fx-background-radius: 8;" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                     <children>
+                        <Label text="Expired" textFill="white" />
+                        <Label fx:id="lblExpired" text="0" textFill="white">
+                           <font><Font name="System Bold" size="24.0" /></font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+
+            <VBox spacing="5.0" style="-fx-background-color: white; -fx-background-radius: 8;">
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+               <children>
+                  <Label text="Top Selling Medicines">
+                     <font><Font name="System Bold" size="16.0" /></font>
+                  </Label>
+                  <VBox fx:id="bestSellersBox" spacing="3.0" />
+               </children>
+            </VBox>
+
+            <VBox spacing="5.0" style="-fx-background-color: white; -fx-background-radius: 8;">
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+               <children>
+                  <Label text="Revenue Trend (Last 7 Days)">
+                     <font><Font name="System Bold" size="16.0" /></font>
+                  </Label>
+                  <VBox fx:id="revenueBox" spacing="3.0" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

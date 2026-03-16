@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.4" style="-fx-background-color: #ecf0f1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pharmacy.controllers.CustomersController">
+   <items>
+      <!-- Left side: Customer List -->
+      <VBox spacing="10.0">
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+         <children>
+            <Label text="Customer Directory" textFill="#2c3e50">
+               <font><Font name="System Bold" size="18.0" /></font>
+            </Label>
+            <TableView fx:id="customerTable" VBox.vgrow="ALWAYS">
+               <columns>
+                  <TableColumn fx:id="colCustName" prefWidth="120.0" text="Customer Name" />
+                  <TableColumn fx:id="colCustContact" prefWidth="100.0" text="Contact #" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </VBox>
+
+      <!-- Right side: Purchase History -->
+      <VBox spacing="10.0">
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+         <children>
+            <Label text="Purchase History" textFill="#2c3e50">
+               <font><Font name="System Bold" size="18.0" /></font>
+            </Label>
+            <Label fx:id="lblHistoryTitle" text="Select a customer to view history" textFill="#7f8c8d" />
+            <ListView fx:id="listHistory" VBox.vgrow="ALWAYS" style="-fx-font-family: 'Courier New'; -fx-font-size: 13;" />
+         </children>
+      </VBox>
+   </items>
+</SplitPane>

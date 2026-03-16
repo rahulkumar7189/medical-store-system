@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="640.0" prefWidth="800.0" style="-fx-background-color: #ecf0f1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pharmacy.controllers.SuppliersController">
+   
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="50.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Suppliers Directory" textFill="#2c3e50">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+
+   <!-- Center: Suppliers Table -->
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <TableView fx:id="supplierTable" prefHeight="550.0" prefWidth="500.0" VBox.vgrow="ALWAYS">
+              <columns>
+                <TableColumn fx:id="colId" prefWidth="50.0" text="ID" />
+                <TableColumn fx:id="colName" prefWidth="150.0" text="Company Name" />
+                <TableColumn fx:id="colContact" prefWidth="150.0" text="Contact Info" />
+                <TableColumn fx:id="colAddress" prefWidth="150.0" text="Physical Address" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </VBox>
+   </center>
+
+   <!-- Right: Add Supplier Form -->
+   <right>
+      <VBox prefWidth="280.0" spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 5;" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets bottom="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+         <children>
+            <Label text="Add New Supplier">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Label>
+            
+            <VBox spacing="2.0">
+               <Label text="Company Name *" />
+               <TextField fx:id="txtName" promptText="e.g. Pfizer Inc." />
+            </VBox>
+            
+            <VBox spacing="2.0">
+               <Label text="Contact Info *" />
+               <TextField fx:id="txtContact" promptText="Phone / Email" />
+            </VBox>
+            
+            <VBox spacing="2.0">
+               <Label text="Physical Address" />
+               <TextArea fx:id="txtAddress" prefHeight="80.0" prefWidth="200.0" promptText="Full Company Address..." wrapText="true" />
+            </VBox>
+            
+            <Label fx:id="lblStatus" textFill="RED" wrapText="true">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Label>
+            
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleAddSupplier" styleClass="primary-button" text="Save Supplier">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clearForm" style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-cursor: hand;" text="Clear Form">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </right>
+</BorderPane>
