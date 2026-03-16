@@ -7,11 +7,11 @@ def main():
     doc = Document()
     
     # Title
-    title = doc.add_heading('Pharmacy Management System - Project Report', 0)
+    title = doc.add_heading('Medical Store System - Project Report', 0)
     title.alignment = WD_ALIGN_PARAGRAPH.CENTER
     
     doc.add_paragraph('Author: Rahul Kumar').alignment = WD_ALIGN_PARAGRAPH.CENTER
-    doc.add_paragraph('Repository: https://github.com/rahulkumar/PharmacySystem').alignment = WD_ALIGN_PARAGRAPH.CENTER
+    doc.add_paragraph('Repository: https://github.com/rahulkumar7189/medical-store-system').alignment = WD_ALIGN_PARAGRAPH.CENTER
     doc.add_page_break()
 
     # 1. Project Overview
@@ -173,7 +173,7 @@ def main():
         run.font.name = 'Consolas'
         run.font.size = Pt(9)
 
-    output_path = "Pharmacy_Management_System_Project_Report.docx"
+    output_path = "Medical_Store_System_Project_Report.docx"
     doc.save(output_path)
     print(f"Report fully generated successfully at: {output_path}")
 
